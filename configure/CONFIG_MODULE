@@ -1,0 +1,13 @@
+#
+MODULE_NAME:=opencv
+
+MODULE_TAG:=tags/3.4.2
+
+# In most case, we don't need to touch the following variables.
+
+MODULE_SRC_PATH:=opencv
+MODULE_MAKEFILE:=$(MODULE_NAME).Makefile
+MODULE_BUILD_DIR:=build-dir
+
+# The definitions shown below can also be placed in an untracked CONFIG_MODULE.local
+-include $(TOP)/configure/CONFIG_MODULE.local
