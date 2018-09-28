@@ -74,4 +74,8 @@ endif
 
 ## Setup: For CentOS, add /usr/local/lib to ld.so.conf
 setup:
-	$(QUIET)sudo -E bash -c ' echo "/usr/local/lib" > "/etc/ld.so.conf.d/e3-lmfit.conf"'
+	$(QUIET)echo "Put /usr/local/lib into ld.conf"
+	$(QUIET)sudo -E bash -c ' echo "/usr/local/lib" > "/etc/ld.so.conf.d/$(MODULE_NAME).conf"'
+	$(QUIET)echo "Update ldconfig..."
+	$(QUIET)sudo /sbin/ldconfig
+	
